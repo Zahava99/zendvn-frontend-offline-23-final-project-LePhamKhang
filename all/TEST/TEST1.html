@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Add some basic styling for the mobile menu */
+    #mobile-menu-active {
+      display: none; /* Hide the menu by default */
+    }
+
+    /* Style for the dropdown */
+    .submenu {
+      display: none;
+    }
+
+    /* Display the submenu when the parent li is hovered or clicked */
+    .has-droupdown:hover .submenu,
+    .has-droupdown:focus-within .submenu {
+      display: block;
+    }
+
+    /* Add a media query to make the menu visible on smaller screens */
+    @media only screen and (max-width: 768px) {
+      #mobile-menu-active {
+        display: block; /* Show the mobile menu */
+      }
+
+      .mainmenu {
+        flex-direction: column; /* Arrange menu items in a column */
+      }
+
+      .submenu {
+        display: none; /* Hide submenus by default on smaller screens */
+      }
+
+      .has-droupdown .submenu {
+        display: none; /* Hide submenus by default */
+      }
+
+      .has-droupdown.active .submenu {
+        display: block; /* Display submenu when the parent is active */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav-main mainmenu-nav mt--30">
+    <ul class="mainmenu" id="mobile-menu-active">
+      <li class="has-droupdown">
+        <a href="#" class="main">Home</a>
+        <ul class="submenu">
+          <li><a class="mobile-menu-link" href="index.html">Home 01 - Main</a></li>
+          <li><a class="mobile-menu-link" href="index-two.html">Home 02 - Fashion</a></li>
+          <!-- Add other submenu items as needed -->
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a class="main mobile-menu-link" href="about.html">About</a>
+      </li>
+      <li class="has-droupdown">
+        <a href="#" class="main">Category</a>
+        <ul class="submenu">
+          <li><a class="mobile-menu-link" href="category-style-1.html">Category Style 1</a></li>
+          <li><a class="mobile-menu-link" href="category-style-2.html">Category Style 2</a></li>
+          <!-- Add other submenu items as needed -->
+        </ul>
+      </li>
+      <li class="has-droupdown">
+        <a href="#" class="main">Features</a>
+        <ul class="submenu">
+          <li><a class="mobile-menu-link" href="author.html">Author</a></li>
+          <li><a class="mobile-menu-link" href="team.html">Team</a></li>
+          <!-- Add other submenu items as needed -->
+        </ul>
+      </li>
+      <li class="has-droupdown">
+        <a href="#" class="main">Post</a>
+        <ul class="submenu">
+          <li><a class="mobile-menu-link" href="post-style-1.html">Post Style 1</a></li>
+          <li><a class="mobile-menu-link" href="post-style-2.html">Post Style 2</a></li>
+          <!-- Add other submenu items as needed -->
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a class="main mobile-menu-link" href="contact.html">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Your other HTML content here -->
+
+  <!-- Add any JavaScript if needed to toggle the active class for mobile -->
+  <script>
+    // Add a script to toggle the 'active' class for the mobile menu
+    document.addEventListener('DOMContentLoaded', function() {
+      var dropdowns = document.querySelectorAll('.has-droupdown');
+      dropdowns.forEach(function(dropdown) {
+        dropdown.addEventListener('click', function() {
+          this.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
