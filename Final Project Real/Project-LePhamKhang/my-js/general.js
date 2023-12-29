@@ -94,7 +94,7 @@ const response = API.call()
       weatherData.timelines.hourly[0].values.weatherCode
     console.log('11', getWeatherIconNames)
     const weatherIconName = getWeatherIconName(getWeatherIconNames)
-    elWeatherIcon.src = `C:\Users\MSI\Desktop\Final Project\Final Project Real\Project-LePhamKhang\my-img\weather icon${weatherIconName}`
+    elWeatherIcon.src = `C:\\Users\\MSI\\Desktop\\Final Project\\Final Project Real\\Project-LePhamKhang\\my-img\\weather icon\\${weatherIconName}`
   })
   function getWeatherIconName (weatherCode) {
     if (weatherCode === 1000 || weatherCode === 10000 || weatherCode === 10001) {
