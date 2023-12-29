@@ -37,8 +37,8 @@ API.call().get('/categories_news').then(response => {
           <ul class="echo-submenu list-unstyled menu-pages">
               <li class="menu-item"><a href="profile.html" class="echo-main-element">Thông tin tài khoản</a></li>
               <li class="menu-item"><a href="changePassword.html" class="echo-main-element">Thay đổi mật khẩu</a></li>
-              <li class="menu-item"><a href="AdminArticleCreate.html" class="echo-main-element">Tạo bài viết</a></li>
-              <li class="menu-item"><a href="AdminArticleManagement.html" class="echo-main-element">Quản lý bài viết</a></li>
+              <li class="menu-item"><a href="Admin Article Create.html" class="echo-main-element">Tạo bài viết</a></li>
+              <li class="menu-item"><a href="Admin Article Management.html" class="echo-main-element">Quản lý bài viết</a></li>
               <li class="menu-item"><a href="#" class="echo-main-element"id="btnLogout">Đăng xuất</a></li>
           </ul>
       </li>`
@@ -68,7 +68,7 @@ API.call().get('/categories_news').then(response => {
   const categories = response.data.data;
   let htmlMobileMenu = '';
   let htmlMobileMenuDropdown = '';
-  //let elMobileMenuActive = document.getElementById('mobile-menu-active'); // Thay 'yourMainMenuId' bằng ID thực tế của menu chính
+  //let elMobileMenuActive = document.getElementById('mobile-menu-active');
 
   categories.forEach((item, index) => {
     if (index < 3) {
@@ -91,33 +91,67 @@ API.call().get('/categories_news').then(response => {
               ${htmlMobileMenuDropdown}
           </ul>
       </li>`;
-      
+      const Token = localStorage.getItem('ACCESS_TOKEN')
+      API.callWithToken().get('/auth/me')
+        .then(response => {
+          elMobileMenuActive.innerHTML +=
+            /*html*/
+            `<li class="has-dropdown">
+              <a href="#" class="main">${response.data.data.name}</a>
+              <ul class="submenu mm-collapse">
+                  <li><a href="profile.html" class="mobile-menu-link">Thông tin tài khoản</a></li>
+                  <li><a href="changePassword.html" class="mobile-menu-link">Thay đổi mật khẩu</a></li>
+                  <li><a href="Admin Article Create.html" class="mobile-menu-link">Tạo bài viết</a></li>
+                  <li><a href="Admin Article Management.html" class="mobile-menu-link">Quản lý bài viết</a></li>
+                  <li><a href="#" class="mobile-menu-link"id="btnLogout">Đăng xuất</a></li>
+              </ul>
+          </li>`
+        })
+        .catch(err => {
+          elMobileMenuActive.innerHTML +=
+            /*html*/
+            `<li class="has-dropdown">
+              <a href="#" class="main">Tài khoản</a>
+              <ul class="submenu mm-collapse">
+                  <li><a href="login.html" class="mobile-menu-link">Đăng nhập</a></li>
+                  <li><a href="register.html" class="mobile-menu-link">Đăng ký</a></li>
+              </ul>
+          </li>`
+        })
+
   // ... (các phần khác của mã JavaScript)
 
   // Thêm xử lý sự kiện click vào menu
   let dropdowns = document.querySelectorAll('.has-dropdown');
+
   dropdowns.forEach(function(dropdown) {
     dropdown.addEventListener('click', function() {
       console.log('click')
-      this.classList.toggle('mm-active');
-      let expanded = this.querySelector('.main').getAttribute('aria-expanded') === 'true';
+      // Toggle the 'mm-active' class on the parent li
+      this.classList.toggle('mm-show');
+
+      // Toggle the 'aria-expanded' attribute on the anchor tag
+      let expanded = this.querySelector('.main').getAttribute('aria-expanded') === 'true' || 'false';
       this.querySelector('.main').setAttribute('aria-expanded', !expanded);
+
+      // Toggle the 'mm-show' class on the submenu ul
       let submenu = this.querySelector('.submenu');
-      if (submenu) { 
+      if (submenu) { // Toggle 'mm-collapsing'
         submenu.classList.toggle('mm-collapsing');
+        // Wait for the collapsing animation to finish
         setTimeout(() => {
+          // Toggle 'mm-collapsing' again to remove it
           submenu.classList.toggle('mm-collapsing');
+          // Toggle 'mm-show'
           submenu.classList.toggle('mm-show');
-        }, 50);
+        }, 50); // Adjust the time based on your animation duration
       }
     });
   });
-  //ASD
-  //
+
 }).catch(error => {
   console.error('Error fetching categories:', error);
 });
-//
 API.call().get('/categories_news/featured?limit=10').then(response => {
   const categories = response.data.data
   let htmlFooterMostPopular = ''
@@ -130,73 +164,3 @@ API.call().get('/categories_news/featured?limit=10').then(response => {
   })
   elFooterMostPopular.innerHTML = htmlFooterMostPopular 
 })
-const userMenu = document.getElementById('user-menu');
-API.callWithToken().get('/auth/me')
-  .then(response => {
-    userMenu.innerHTML +=
-      /*html*/
-      `<li class="has-dropdown userinfo">
-        <a href="#" class="main">${response.data.data.name}</a>
-        <ul class="submenu mm-collapse">
-            <li><a href="profile.html" class="mobile-menu-link">Thông tin tài khoản</a></li>
-            <li><a href="changePassword.html" class="mobile-menu-link">Thay đổi mật khẩu</a></li>
-            <li><a href="AdminArticleCreate.html" class="mobile-menu-link">Tạo bài viết</a></li>
-            <li><a href="AdminArticleManagement.html" class="mobile-menu-link">Quản lý bài viết</a></li>
-            <li><a href="#" class="mobile-menu-link"id="btnLogout">Đăng xuất</a></li>
-        </ul>
-    </li>`
-    let dropdowns = document.querySelectorAll('.userinfo');
-    dropdowns.forEach(function(dropdown) {
-      dropdown.addEventListener('click', function() {
-        console.log('click')
-        this.classList.toggle('mm-active');
-        let expanded = this.querySelector('.main').getAttribute('aria-expanded') === 'true';
-        this.querySelector('.main').setAttribute('aria-expanded', !expanded);
-        let submenu = this.querySelector('.submenu');
-        if (submenu) { 
-          submenu.classList.toggle('mm-collapsing');
-          setTimeout(() => {
-            submenu.classList.toggle('mm-collapsing');
-            submenu.classList.toggle('mm-show');
-          }, 50);
-        }
-      });
-    });
-  })
-  .catch(err => {
-    userMenu.innerHTML +=
-      /*html*/
-      `<li class="has-dropdown">
-        <a href="#" class="main">Tài khoản</a>
-        <ul class="submenu mm-collapse">
-            <li><a href="login copy.html" class="mobile-menu-link">Đăng nhập</a></li>
-            <li><a href="register.html" class="mobile-menu-link">Đăng ký</a></li>
-        </ul>
-    </li>`
-    let dropdowns = document.querySelectorAll('.userinfo');
-    dropdowns.forEach(function(dropdown) {
-      dropdown.addEventListener('click', function() {
-        console.log('click')
-        this.classList.toggle('mm-active');
-        let expanded = this.querySelector('.main').getAttribute('aria-expanded') === 'true';
-        this.querySelector('.main').setAttribute('aria-expanded', !expanded);
-        let submenu = this.querySelector('.submenu');
-        if (submenu) { 
-          submenu.classList.toggle('mm-collapsing');
-          setTimeout(() => {
-            submenu.classList.toggle('mm-collapsing');
-            submenu.classList.toggle('mm-show');
-          }, 50);
-        }
-      });
-    });
-  })
-  userMenu.addEventListener('click', function (e) {
-    const el = e.target;
-    console.log('click');
-    if (el.id === 'btnLogout') {
-      e.preventDefault();
-      localStorage.removeItem('ACCESS_TOKEN');
-      window.location.href = 'index copy.html';
-    }
-  });

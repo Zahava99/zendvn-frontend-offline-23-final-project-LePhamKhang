@@ -37,8 +37,8 @@ API.call().get('/categories_news').then(response => {
           <ul class="echo-submenu list-unstyled menu-pages">
               <li class="menu-item"><a href="profile.html" class="echo-main-element">Thông tin tài khoản</a></li>
               <li class="menu-item"><a href="changePassword.html" class="echo-main-element">Thay đổi mật khẩu</a></li>
-              <li class="menu-item"><a href="AdminArticleCreate.html" class="echo-main-element">Tạo bài viết</a></li>
-              <li class="menu-item"><a href="AdminArticleManagement.html" class="echo-main-element">Quản lý bài viết</a></li>
+              <li class="menu-item"><a href="Admin Article Create.html" class="echo-main-element">Tạo bài viết</a></li>
+              <li class="menu-item"><a href="Admin Article Management.html" class="echo-main-element">Quản lý bài viết</a></li>
               <li class="menu-item"><a href="#" class="echo-main-element"id="btnLogout">Đăng xuất</a></li>
           </ul>
       </li>`
@@ -61,10 +61,23 @@ elMainMenu.addEventListener('click', function (e) {
   if (el.id === 'btnLogout') {
     e.preventDefault();
     localStorage.removeItem('ACCESS_TOKEN');
-    window.location.href = 'index.html';
+    window.location.href = 'index copy.html';
   }
 });
-API.call().get('/categories_news').then(response => {
+API.call().get('/categories_news/featured?limit=10').then(response => {
+  const categories = response.data.data
+  let htmlFooterMostPopular = ''
+  categories.forEach((item, index) => {
+    if (index < 10) {
+      htmlFooterMostPopular += `
+          <li>
+          <a href="category.html?id=${item.id}">${item.name}</a></li>`
+    }
+  })
+  elFooterMostPopular.innerHTML = htmlFooterMostPopular 
+})
+API.call().get('/categories_news')
+.then(response => {
   const categories = response.data.data;
   let htmlMobileMenu = '';
   let htmlMobileMenuDropdown = '';
@@ -81,10 +94,11 @@ API.call().get('/categories_news').then(response => {
           <a href="category.html?id=${item.id}" class="mobile-menu-link">${item.name}</a></li>`;
     }
   });
+  
 
   elMobileMenuActive.innerHTML =
   htmlMobileMenu +
-    /* Html*/ `
+     `
       <li class="has-dropdown">
           <a href="#" class="main" aria-expanded="false">Danh mục khác</a>
           <ul class="submenu mm-collapse">
@@ -117,20 +131,8 @@ API.call().get('/categories_news').then(response => {
 }).catch(error => {
   console.error('Error fetching categories:', error);
 });
-//
-API.call().get('/categories_news/featured?limit=10').then(response => {
-  const categories = response.data.data
-  let htmlFooterMostPopular = ''
-  categories.forEach((item, index) => {
-    if (index < 10) {
-      htmlFooterMostPopular += `
-          <li>
-          <a href="category.html?id=${item.id}">${item.name}</a></li>`
-    }
-  })
-  elFooterMostPopular.innerHTML = htmlFooterMostPopular 
-})
-const userMenu = document.getElementById('user-menu');
+//const Token = localStorage.getItem('ACCESS_TOKEN')
+    const userMenu = document.getElementById('user-menu');
 API.callWithToken().get('/auth/me')
   .then(response => {
     userMenu.innerHTML +=
@@ -140,15 +142,15 @@ API.callWithToken().get('/auth/me')
         <ul class="submenu mm-collapse">
             <li><a href="profile.html" class="mobile-menu-link">Thông tin tài khoản</a></li>
             <li><a href="changePassword.html" class="mobile-menu-link">Thay đổi mật khẩu</a></li>
-            <li><a href="AdminArticleCreate.html" class="mobile-menu-link">Tạo bài viết</a></li>
-            <li><a href="AdminArticleManagement.html" class="mobile-menu-link">Quản lý bài viết</a></li>
+            <li><a href="Admin Article Create.html" class="mobile-menu-link">Tạo bài viết</a></li>
+            <li><a href="Admin Article Management.html" class="mobile-menu-link">Quản lý bài viết</a></li>
             <li><a href="#" class="mobile-menu-link"id="btnLogout">Đăng xuất</a></li>
         </ul>
     </li>`
     let dropdowns = document.querySelectorAll('.userinfo');
     dropdowns.forEach(function(dropdown) {
       dropdown.addEventListener('click', function() {
-        console.log('click')
+        //console.log('click')
         this.classList.toggle('mm-active');
         let expanded = this.querySelector('.main').getAttribute('aria-expanded') === 'true';
         this.querySelector('.main').setAttribute('aria-expanded', !expanded);

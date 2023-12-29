@@ -216,7 +216,7 @@ ParentShowmoreButton.addEventListener('click', function (e) {
 function DisplayNewsArticleLarges (articleNewLarges) {
   const publishDate = dayjs(articleNewLarges.publish_date).fromNow()
   return /*html*/ `
-  <div class="echo-hero-baner mb--10">
+  <div class="echo-hero-baner">
       <div class="echo-hero-banner-main-img  img-transition-scale">
           <a href="post-details.html?id=${articleNewLarges.id}"><img class="banner-image-one img-hover" src="${articleNewLarges.thumb}" alt="${articleNewLarges.title}"></a>
       </div>

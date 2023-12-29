@@ -26,7 +26,8 @@
     <!-- Start Top Header Area -->
 
     <!-- Start Top Header Area -->
-    <header class="echo-header-area">
+    <x-header></x-header>
+    <!--<header class="echo-header-area">
         <div class="echo-header-top">
             <div class="container">
                 <div class="echo-full-header-top">
@@ -110,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <!-- Start Home-1 Menu & Site Logo & Social Media -->
+        <!- Start Home-1 Menu & Site Logo & Social Media ->
         <div class="echo-home-1-menu">
             <div class="echo-site-main-logo-menu-social">
                 <div class="container">
@@ -127,7 +128,7 @@
                                     <ul class="list-unstyled echo-desktop-menu" id="mainMenu" >
                                         <li class="menu-item echo-has-dropdown">
                                             <a href="#" class="echo-dropdown-main-element active">Home</a>
-                                            <!-- Start Dropdown Menu -->
+                                            <!- Start Dropdown Menu ->
                                             <ul class="echo-submenu list-unstyled menu-home">
                                                 <li class="nav-item"><a href="index.html">Home 01 - Main</a></li>
                                                 <li class="nav-item"><a href="index-two.html">Home 02 - Fashion</a></li>
@@ -140,7 +141,7 @@
                                                 <li class="nav-item"><a class="mobile-menu-link" href="index-nine.html">Home 09 - Food</a></li>
                                                 <li class="nav-item"><a class="mobile-menu-link" href="index-ten.html">Home 10 - Photography</a></li>
                                             </ul>
-                                            <!-- End Dropdown Menu -->
+                                            <!- End Dropdown Menu ->
                                         </li>
                                         <li class="menu-item echo-has-dropdown">
                                             <a href="#" class="echo-dropdown-main-element">Pages</a>
@@ -221,12 +222,12 @@
                         <div class="col-xl-3 col-lg-3 col-5">
                             <div class="echo-home-1-social-media-icons">
                                 <ul class="list-unstyled social-area">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="https://www.facebook.com/khang.lepham.14/"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="https://twitter.com/ZedChampionshi2"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/zed-championship-409613210/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.instagram.com/khang.lepham.14/"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="https://pin.it/5ypt8Mw"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCMqzV8C36VszAbCkuF9dKtQ"><i class="fa-brands fa-youtube"></i></a></li>
                                 </ul>
                                 <div class="echo-header-top-menu-bar menu-btn">
                                     <a href="javascript:void(0)">
@@ -241,8 +242,8 @@
                 </div>
             </div>
         </div>
-        <!-- End Home-1 Menu & Site Logo & Social Media -->
-    </header>
+        <!- End Home-1 Menu & Site Logo & Social Media ->
+    </header>-->
     <!-- End Top Header Area -->
 
     <!-- side bar for desktop -->
@@ -347,34 +348,36 @@
                     </li>
                     <li class="menu-item"><a class="main mobile-menu-link" href="contact.html">Contact</a></li>
                 </ul>
+                <ul class="mainmenu metismenu" id="user-menu">
+                </ul>
             </nav>
 
             <div class="social-wrapper-one">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="https://www.facebook.com/khang.lepham.14/">
                             <i class="fa-brands fa-facebook-f"></i>
-                        </a>
+                          </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://twitter.com/ZedChampionshi2">
                             <i class="fa-brands fa-twitter"></i>
-                        </a>
+                          </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
+                        <a href="https://www.linkedin.com/in/zed-championship-409613210/">
                             <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
+                          </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/khang.lepham.14/">
+                            <i class="fa-brands fa-instagram"></i>
+                          </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCMqzV8C36VszAbCkuF9dKtQ">
+                            <i class="fa-brands fa-youtube"></i>
+                          </a>
                     </li>
                 </ul>
             </div>
@@ -579,9 +582,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="echo-de-category-show-more-btn text-center mt--20">
+                            <!--<div class="echo-de-category-show-more-btn text-center mt--20">
                                 <a href="#" class="text-capitalize echo-py-btn">Show more</a>
-                            </div>
+                            </div>-->
+                            <nav aria-label="...">
+                                <ul class="pagination flex-wrap justify-content-center" id="myPagination">
+                                  <li class="page-item disabled">
+                                    <a class="page-link">Previous</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="#">2</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                  </li>
+                                </ul>
+                              </nav>
                         </div>
                         <div class="col-xl-4 col-lg-5 col-md-12 sticky-coloum-item">
                             <div class="echo-right-ct-1">
@@ -723,7 +741,8 @@
 
     <!-- Start Footer Area -->
     <!-- Start Footer Area -->
-    <footer class="echo-footer-area" id="footer">
+    <x-footer></x-footer>
+    <!--<footer class="echo-footer-area" id="footer">
         <div class="container">
             <div class="echo-row">
                 <div class="echo-footer-content-1">
@@ -830,7 +849,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>-->
     <!-- End Footer Area -->
     <!-- End Footer Area -->
 
@@ -857,6 +876,8 @@
 
     <!-- main js file -->
     <script src="assets/js/main.js" defer></script>
+    <script src="components/Header.js"></script>
+    <script src="components/Footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/plugin/relativeTime.js"></script>

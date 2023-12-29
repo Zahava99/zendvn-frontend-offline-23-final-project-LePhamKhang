@@ -3,6 +3,7 @@ const elArticlesAndCate = document.getElementById('ApoArticlesAndCate')
 const elApoTabTitle = document.getElementById('ApoTabTitle')
 const elApoArticlesTitle = document.getElementById('ApoArticlesTitle')
 const elTopStory = document.getElementById('TopStory')
+const elMyPagination = document.getElementById('myPagination');
 const elPreloader = document.getElementById('preloader')
 const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)
@@ -11,21 +12,32 @@ let currentPage = parseInt(urlParams.get('page'))
 if (isNaN(currentPage)) currentPage = 1
 FindArticles(currentPage)
 // Nút Show More
-elArticlesAndCate.addEventListener('click',function(e){
-    const el = e.target
-    console.log('click')
-    el.classList.contains('text-capitalize echo-py-btn')
-    currentPage ++
-    console.log(currentPage)
-    FindArticles(currentPage)
-    addOrUpdateUrlParameter('page',currentPage)
-})
+// elArticlesAndCate.addEventListener('click',function(e){
+//     const el = e.target
+//     console.log('click')
+//     el.classList.contains('text-capitalize echo-py-btn')
+//     currentPage ++
+//     console.log(currentPage)
+//     FindArticles(currentPage)
+//     addOrUpdateUrlParameter('page',currentPage)
+// })
+//Pagination Start
+const PAGE_RANGE = 5;
+console.log('currentPage', currentPage);
+console.log('Math.ceil(currentPage / PAGE_RANGE)', Math.ceil(currentPage / PAGE_RANGE));
+let START = Math.ceil(currentPage / PAGE_RANGE) * PAGE_RANGE - PAGE_RANGE + 1
 
+console.log('start', START);
+let END = START + PAGE_RANGE - 1;
+//getArticles()
+//Pagination End
 function FindArticles (page = 1) {
   API.call().get(`articles/search?q=${keyWords}&limit=10&page=${page}`).then(
     response => {
       const articlesWithCategory = response.data.data
-      console.log('abc', articlesWithCategory)
+      const totalPages = response.data.meta.last_page;
+      console.log('PAGEEEEE',totalPages);
+      //console.log('abc', articlesWithCategory)
       let ApoTabTitle = ''
       //let ApoArticlesTitle = ''
       let html = ''
@@ -67,6 +79,7 @@ function FindArticles (page = 1) {
         elApoTabTitle.innerText = /*html*/ `${ApoTabTitle}`
         elApoArticlesTitle.innerText = /*html*/ `Đã tìm thấy bài viết với từ khóa "${keyWords}"`
         elArticles.innerHTML = html
+        renderPagination(totalPages);
         elPreloader.remove();
       })
     }
@@ -103,6 +116,40 @@ function DisplayTopStories (articleStory) {
     </div>
 </div>`
 }
+//Pagination Start
+elMyPagination.addEventListener('click', function (e) {
+  const el = e.target;
+  if (el.classList.contains('my-page-link')) {
+    currentPage = parseInt(el.innerText);
+    FindArticles(currentPage);
+    addOrUpdateUrlParameter('page', currentPage);
+  }
+
+  if (el.classList.contains('my-page-link-prev')) {
+    currentPage--;
+
+    if (currentPage === START - 1) {
+      END = START - 1;
+      START = END - PAGE_RANGE + 1;
+    }
+
+    FindArticles(currentPage);
+    addOrUpdateUrlParameter('page', currentPage);
+  }
+
+  if (el.classList.contains('my-page-link-next')) {
+    currentPage++;
+
+    if (currentPage === END + 1) {
+      START = currentPage;
+      END = START + PAGE_RANGE - 1;
+    }
+
+    FindArticles(currentPage);
+    addOrUpdateUrlParameter('page', currentPage);
+  }
+});
+//Pagination END
 function getArticles (page = 1) {
   API.call()
     .get(`categories_news/${id}/articles?limit=5&page=${page}`)
@@ -149,6 +196,32 @@ function getArticles (page = 1) {
       })
     })
 }
+//Pagination Start
+function renderPagination(total) {
+  const disabledPrev = currentPage === 1 ? 'disabled' : '';
+  let html = /*html */ `
+  <li class="page-item ${disabledPrev}">
+    <a class="page-link my-page-link-prev" href="#">Previous</a>
+  </li>`;
+
+  if (END > total) END = total;
+
+  for (let index = START; index <= END; index++) {
+    const active = index === currentPage ? 'active' : '';
+    html += /*html */ `
+    <li class="page-item ${active}">
+      <a class="page-link my-page-link" href="#">${index}</a>
+    </li>`;
+  }
+
+  const disabledNext = currentPage === total ? 'disabled' : '';
+  html += /*html */ `
+  <li class="page-item ${disabledNext}">
+    <a class="page-link my-page-link-next" href="#">Next</a>
+  </li>`;
+  elMyPagination.innerHTML = html;
+}
+//Pagination END
 const elPopularCategory = document.getElementById('PopularCategory')
 /*API.call()
   .get(

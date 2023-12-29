@@ -94,6 +94,13 @@ td.myWidth{
     /*transition: max-height 300ms ease-out;*/
     transition:none;
   }
+  .page-item:not(:first-child) .page-link {
+    margin-left: 10px;
+}
+.mobile-menu nav ul li {
+    margin: 10px 0;
+    padding: 0;
+}
 .ck-editor__editable[role="textbox"] {
     /* editing area */
     min-height: 400px;

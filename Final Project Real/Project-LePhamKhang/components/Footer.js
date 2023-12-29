@@ -13,42 +13,41 @@ class Footer extends HTMLElement {
             <h4 class="text-capitalize">Get In Touch</h4>
           </div>
           <div class="echo-footer-address">
-            <span class="text-capitalize"
-              ><i class="fa-regular fa-map"></i> 255 Sheet, New Avanew,
-              NY</span
-            >
-            <span class="text-capitalize"
-              ><i class="fa-regular fa-phone"></i> (00) 236 123 456 88</span
-            >
-            <span class="text-capitalize"
-              ><i class="fa-sharp fa-regular fa-envelope"></i>
-              info@demomail.com</span
-            >
-            <div class="echo-footer-social-media">
-              <a href="#">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="#">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-              <a href="#">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a href="#">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="#">
-                <i class="fa-brands fa-youtube"></i>
-              </a>
-            </div>
+          <span class="text-capitalize"
+            ><i class="fa-regular fa-map"></i> Số 29 Đường Tăng Bạt Hổ, phường 12, Quận 5, Thành Phố Hồ Chí Minh</span
+          >
+          <span class="text-capitalize"
+            ><i class="fa-regular fa-phone"></i>  (84-8) 3855 4031</span
+          >
+          <span class="text-capitalize"
+            ><i class="fa-sharp fa-regular fa-envelope"></i>
+            notarealproduct@gmail.com</span
+          >
+          <div class="echo-footer-social-media">
+            <a href="https://www.facebook.com/khang.lepham.14/">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/ZedChampionshi2">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/zed-championship-409613210/">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/khang.lepham.14/">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCMqzV8C36VszAbCkuF9dKtQ">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
           </div>
+        </div>
         </div>
         <div class="echo-footer-content-2">
           <div class="echo-get-in-tuch">
             <h4 class="text-capitalize">Most Popular</h4>
           </div>
           <div class="echo-footer-most-popular">
-            <ul class="list-unstyled">
+            <ul class="list-unstyled" id="FooterMostPopular">
               <li><a href="#">Business</a></li>
               <li><a href="#">Word</a></li>
               <li><a href="#">Politics</a></li>
@@ -68,11 +67,11 @@ class Footer extends HTMLElement {
           </div>
           <div class="echo-footer-help">
             <ul class="list-unstyled">
-              <li><a href="about.html">About</a></li>
-              <li><a href="#">Media Kit</a></li>
-              <li><a href="#">Advertise</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">FAQ</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="404.html">Media Kit</a></li>
+            <li><a href="404.html">Advertise</a></li>
+            <li><a href="team.html">Privacy Policy</a></li>
+            <li><a href="contact.html">FAQ and Contact Info</a></li>
             </ul>
           </div>
         </div>

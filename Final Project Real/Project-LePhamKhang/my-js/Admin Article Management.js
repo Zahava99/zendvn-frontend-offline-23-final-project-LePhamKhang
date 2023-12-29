@@ -63,7 +63,7 @@ API.callWithToken()
           <a class="btn btn-info w-100 me-2 fs-1" href="post-details.html?id=${
             myArticle.id
           }">View</a>
-          <a class="btn btn-secondary w-100 me-2 fs-1" href="Admin Update Article.html?id=${id}">Edit</a>
+          <a class="btn btn-secondary w-100 me-2 fs-1" href="AdminUpdateArticle.html?id=${id}">Edit</a>
           <button class="btn btn-danger fs-1 DeleteButton" data-id="${id}">Delete</button>
           
         </td>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Article Create</title>
+    <title>Contact</title>
     <link
       rel="shortcut icon"
       href="assets/images/fav.png"
@@ -37,29 +37,148 @@
       as="style"
     />
     <link rel="stylesheet preload" href="assets/css/style.css" as="style" />
-    <link rel="stylesheet" href="my-custom-css/myCustomCSS.css">
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-  />
-    <!--<link rel="stylesheet" href="./css/myStyle.css" />-->
-    <style>
-      .echo-df-input {
-        margin-top: 20px;
-      }
-    </style>
   </head>
 
   <body class="innerpage">
-    <!-- <div id="preloader">
-      <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div> -->
     <!-- Start Top Header Area -->
-    <header class="echo-header-area">
-      <!-- Start Home-1 Menu & Site Logo & Social Media -->
+
+    <!-- Start Top Header Area -->
+    <x-header></x-header>
+    <!--<header class="echo-header-area">
+      <div class="echo-header-top">
+        <div class="container">
+          <div class="echo-full-header-top">
+            <div class="row align-items-center plr_md--30">
+              <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                <div class="echo-meta-total-jobs">
+                  <div class="echo-meta-jobs-icons">
+                    <img
+                      src="assets/images/home-1/header-top/home-1-header-top.png"
+                      alt="Echo"
+                    />
+                  </div>
+                  <div class="echo-meta-jobs-text">
+                    <div class="swiper rt-treding-slider10">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <span>Meta to cut 10,000 jobs in second...</span>
+                        </div>
+                        <div class="swiper-slide">
+                          <span>Elevating Your Office Attire...</span>
+                        </div>
+                        <div class="swiper-slide">
+                          <span>Beauty and Wellness Secrets...</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-7 col-8">
+                <div class="echo-header-top-date">
+                  <div class="echo-day-name">
+                    <span><i class="fa-regular fa-cloud"></i></span>
+                    <span id="echo-day" class="echo-home-day"></span>
+                    <span id="echo-date"></span>
+                  </div>
+                  <div class="echo-date-time">
+                    <span><i class="fa-regular fa-calendar"></i></span>
+                    <span><strong>31°C,</strong> New York </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xl-4 col-lg-4 col-md-6 col-sm-5 col-4 position-relative"
+              >
+                <div class="echo-header-top-subs-social-menu">
+                  <div class="echo-header-top-subs-social">
+                    <div
+                      class="echo-subscribe home-2-menu-after echo-header-top-subscribe-btn"
+                    >
+                      <a
+                        href="javascript:void(0)"
+                        class="echo-py-btn"
+                        onclick="document.getElementById('id01').style.display='inline'"
+                        ><i class="fa-regular fa-envelope"></i> Subscribe</a
+                      >
+                    </div>
+                    <div class="echo-header-top-social-media">
+                      <div class="rts-darkmode">
+                        <a id="rts-data-toggle" class="rts-dark-light">
+                          <i class="rts-go-dark fal fa-moon"></i>
+                          <i class="rts-go-light far fa-sun"></i>
+                        </a>
+                      </div>
+                      <a
+                        href="#"
+                        id="search"
+                        class="echo-header-top-search-btn search-icon action-item icon"
+                      >
+                        <svg
+                          width="19"
+                          height="19"
+                          viewBox="0 0 19 19"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9.11556 16.431C13.3485 16.431 16.78 12.9996 16.78 8.76665C16.78 4.53373 13.3485 1.10226 9.11556 1.10226C4.88264 1.10226 1.45117 4.53373 1.45117 8.76665C1.45117 12.9996 4.88264 16.431 9.11556 16.431Z"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M14.4463 14.4954L17.4512 17.4925"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </svg>
+                      </a>
+                      <div class="search-input-area">
+                        <div class="container">
+                          <div class="search-input-inner">
+                            <div class="input-div">
+                              <input
+                                id="searchInput1"
+                                class="search-input"
+                                type="text"
+                                placeholder="Search by keyword or #"
+                              />
+                            </div>
+                            <div class="search-close-icon">
+                              <i class="fa-regular fa-xmark-large rt-xmark"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="echo-header-top-menu-bar menu-btn">
+                      <a href="javascript:void(0)">
+                        <svg
+                          width="20"
+                          height="19"
+                          viewBox="0 0 20 19"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.526001 0.953461H20V3.11724H0.526001V0.953461ZM7.01733 8.52668H20V10.6905H7.01733V8.52668ZM0.526001 16.0999H20V18.2637H0.526001V16.0999Z"
+                            fill="#5E5E5E"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!- Start Home-1 Menu & Site Logo & Social Media ->
       <div class="echo-home-1-menu">
         <div class="echo-site-main-logo-menu-social">
           <div class="container">
@@ -81,12 +200,12 @@
               <div class="col-xl-7 col-lg-7 d-lg-block d-none">
                 <nav>
                   <div class="echo-home-1-menu">
-                    <ul class="list-unstyled echo-desktop-menu" id="mainMenu">
+                    <ul class="list-unstyled echo-desktop-menu">
                       <li class="menu-item echo-has-dropdown">
                         <a href="#" class="echo-dropdown-main-element active"
                           >Home</a
                         >
-                        <!-- Start Dropdown Menu -->
+                        <!- Start Dropdown Menu ->
                         <ul class="echo-submenu list-unstyled menu-home">
                           <li class="nav-item">
                             <a href="index.html">Home 01 - Main</a>
@@ -133,7 +252,7 @@
                             >
                           </li>
                         </ul>
-                        <!-- End Dropdown Menu -->
+                        <!- End Dropdown Menu ->
                       </li>
                       <li class="menu-item echo-has-dropdown">
                         <a href="#" class="echo-dropdown-main-element">Pages</a>
@@ -315,8 +434,8 @@
           </div>
         </div>
       </div>
-      <!-- End Home-1 Menu & Site Logo & Social Media -->
-    </header>
+      <!- End Home-1 Menu & Site Logo & Social Media ->
+    </header>-->
     <!-- End Top Header Area -->
 
     <!-- side bar for desktop -->
@@ -506,6 +625,8 @@
               <a class="main mobile-menu-link" href="contact.html">Contact</a>
             </li>
           </ul>
+          <ul class="mainmenu metismenu" id="user-menu">
+          </ul>
         </nav>
 
         <div class="social-wrapper-one">
@@ -541,6 +662,42 @@
       <!-- mobile menu area end -->
     </div>
     <!-- header style two End -->
+    <!-- Start Subscribe Popup Box -->
+    <div class="echo-popup-model" id="id01">
+      <div class="echo-popup-transition">
+        <div class="model-content animate-subscribe-popup">
+          <a
+            href="javascript:void(0)"
+            onclick="document.getElementById('id01').style.display='none'"
+            ><i class="fa-regular fa-xmark"></i
+          ></a>
+          <div class="echo-p-flexing">
+            <div class="echo-p-img">
+              <img
+                src="assets/images/home-1/feature-right/news-item-1.png"
+                alt="Echo"
+              />
+            </div>
+            <div class="form">
+              <div class="echo-p-sub-heading">
+                <p>Weekly Updates</p>
+              </div>
+              <div class="echo-p-sub-heading">
+                <h3>Let's join our newsletter!</h3>
+              </div>
+              <form method="POST">
+                <input type="email" required placeholder="Enter Your Email.." />
+                <button type="submit">Submit</button>
+              </form>
+              <div class="echo-bottom-popup">
+                <p>Do not worry we don't spam!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Subscribe Popup Box -->
     <!-- End Top Header Area -->
 
     <!-- start breadcrumb area -->
@@ -551,7 +708,7 @@
           <div class="col-lg-12">
             <!-- bread crumb inner wrapper -->
             <div class="breadcrumb-inner text-center">
-              <h1 class="title" id="categoryName">Admin Article Create</h1>
+              <h1 class="title">FAQ And Contact Info</h1>
             </div>
             <!-- bread crumb inner wrapper end -->
           </div>
@@ -561,93 +718,109 @@
     <!-- rts breadcrumba area end -->
     <!-- end breadcrumb area -->
 
+    <!-- Start Contact Area -->
     <section class="echo-contact-area">
       <div class="echo-contact-content">
         <div class="container">
           <div class="echo-contact-full-content">
             <div class="row">
-              <div class="col-lg-6 col-md-12 mx-auto">
+              <div class="col-lg-6 col-md-12">
                 <div class="echo-contact-input-field">
-                  <div class="echo-main-contact-form">
-                    <div id="formMessage"></div>
-                    <form id="contactForm" method="post" role="form">
-                      <div class="echo-df-input">
-                        <img
-                          src="my-img/placeholderimg.jpg"
-                          class="w-100 mb-1"
-                          alt=""
-                          id="ThumbPreview"
-                        />
-                        <input
-                          name="thumb"
-                          class="form-control"
-                          type="text"
-                          placeholder="Thumb links"
-                          id="thumb"
-                          required
-                        />
-                        <button
-                          type="button"
-                          class="btn btn-success d-block w-100 mt--20 h-25 fs-2 fw-medium"
-                          id="btnRandomPhoto"
-                        >
-                          Random Photo
-                        </button>
-                      </div>
-                      <div class="echo-df-input form-group mb--20">
-                        <input
-                          name="title"
-                          type="text"
-                          placeholder="Title"
-                          class="form-control"
-                          id="title"
-                          required
-                        />
-                      </div>
-                      <div class="echo-df-input mt--0">
-                        <select
-                        class="form-select my-form-select "
-                        id="category_id"
-                        name="category_id"
-                      >
-                        <option selected>Chọn danh mục</option>
-                        <option value="1">Thế Giới</option>
-                        <option value="2">Thời Sự</option>
-                        <option value="3">Kinh Doanh</option>
-                        <option value="5">Giải trí</option>
-                        <option value="6">Thể thao</option>
-                        <option value="7">Pháp luật</option>
-                        <option value="8">Giáo Dục</option>
-                        <option value="9">Sức khỏe</option>
-                        <option value="10">Đời sống</option>
-                        <option value="11">Du lịch</option>
-                        <option value="12">Khoa Học</option>
-                        <option value="13">Số Hóa</option>
-                        <option value="14">Xe</option>
-                      </select>
-                      </div>
-                      <div class="echo-df-input">
-                        <textarea
-                        name="description"
-                        id="description"
-                        rows="5"
-                        class="form-control fs-1"
-                        placeholder="Description"
-                      ></textarea>
-                      </div>
-                      <div class="echo-df-input">
-                        <textarea
-                        name="content"
-                        id="content"
-                        rows="8"
-                        class="form-control fs-3"
-                        placeholder="Content"
-                      ></textarea>
-                      </div>
-                      <button type="submit" class="echo-contact-btn mx-auto rounded-3 justify-content-center">
-                        Submit
-                      </button>
-                    </form>
+                  <div class="echo-contact-title">
+                    <h2 class="text-capitalize">
+                        Frequently Asked Questions (FAQ)
+                    </h2>
+                  </div>
+                  <div class="echo-contact-sub-title">
+                      <p><strong>1. What is the focus of your website?</strong> 
+                        Our website covers a wide range of news topics, with a primary
+                         focus on providing the latest updates in both general news and 
+                         the ever-evolving world of technology.</p>
+                      <p><strong>2. How frequently is the content updated?</strong>
+                        We strive to keep our audience informed in real-time. 
+                        News articles are updated regularly throughout the day, 
+                        while tech-related content is posted multiple times a week.
+                    <p><strong>3. Can I submit news tips or tech-related content?</strong> 
+                        Absolutely! We encourage our readers to share any interesting news tips or tech-related content. 
+                        You can submit them through our dedicated submission page, and our editorial team will review 
+                        and consider them for publication.</p>
+                      <p><strong>4. Do you cover international news?</strong>
+                        Yes, our website provides a global perspective on current events.
+                         We aim to deliver news that is relevant and interesting to our 
+                         diverse audience around the world.</p> 
+                      <p><Strong>5. How can I subscribe to your newsletter?</Strong> 
+                        Subscribing to our newsletter is easy! Simply navigate to the homepage, 
+                        find the "Subscribe" button, and enter your email address. 
+                        You'll receive regular updates on the latest news and tech trends.</p>
+                      <p><strong>6. Can I share your articles on social media?</strong>
+                        Absolutely! We encourage our readers to share our articles on social media platforms.
+                         You'll find convenient sharing options on each article page to help you spread the news 
+                         and tech updates with your friends and followers.</p> 
+                      <!--<p><strong>Changes to This Privacy Policy:</strong>
+                      We may update our Privacy Policy from time
+                      to time. Thus, we advise you to review this page
+                      periodically for any changes. We will notify you of any
+                      changes by posting the new Privacy Policy on this page.
+                      These changes are effective immediately, after they are
+                      posted on this page.</p>
+                    <p><strong>Contact Us:</strong>
+                      If you have any questions
+                      or suggestions about our Privacy Policy, do not hesitate
+                      to contact us.</p>-->
+                  </div>
+                  <!--<div class="echo-main-contact-form">
+                                    <div id="form-messages"></div>
+                                    <form id="contact-form" method="post" action="mailer.php">
+                                        <div class="echo-contact-input-flexing">
+                                            <div class="echo-contact-name echo-df-input">
+                                                <input name="name" type="text" placeholder="Name" required>
+                                            </div>
+                                            <div class="echo-contact-email echo-df-input">
+                                                <input name="email" type="email" placeholder="Email" required>
+                                            </div>
+                                        </div>
+                                        <div class="echo-contact-input-flexing echo-df-input">
+                                            <div class="echo-contact-number echo-df-input">
+                                                <input name="phone" type="text" placeholder="Phone" required>
+                                            </div>
+                                            <div class="echo-contact-url echo-df-input">
+                                                <input name="subject" type="text" placeholder="Subject">
+                                            </div>
+                                        </div>
+                                        <div class="echo-contact-texting-fild">
+                                            <textarea name="message" placeholder="Write your message here..."></textarea>
+                                        </div>
+                                        <button type="submit" class="echo-contact-btn">Submit Now <i class="fa-regular fa-arrow-right"></i></button>
+                                    </form>
+                                </div>-->
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <div class="echo-info">
+                  <div class="echo-address">
+                    <h6 class="text-capitalize">Location</h6>
+                    <span
+                      >Số 29 Đường Tăng Bạt Hổ, Phường 12, 
+                      Quận 5, Thành Phố Hồ Chí Minh</span
+                    >
+                  </div>
+                  <div class="echo-address">
+                    <h6 class="text-capitalize">Email</h6>
+                    <span> Notarealproduct@Gmail.Com</span>
+                  </div>
+                  <div class="echo-address">
+                    <h6 class="text-capitalize">Phone</h6>
+                    <span>(84-8) 3855 4031</span>
+                  </div>
+                  <div class="echo-map">
+                    <iframe
+                      class="contact-map"
+                      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d692.9115215504645!2d106.66226015404878!3d10.757627847424978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1703770922266!5m2!1sen!2sbd"
+                      style="border: 0"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
                   </div>
                 </div>
               </div>
@@ -656,10 +829,12 @@
         </div>
       </div>
     </section>
+    <!-- End Contact Area -->
 
     <!-- Start Footer Area -->
     <!-- Start Footer Area -->
-    <footer class="echo-footer-area" id="footer">
+    <x-footer></x-footer>
+    <!--<footer class="echo-footer-area" id="footer">
       <div class="container">
         <div class="echo-row">
           <div class="echo-footer-content-1">
@@ -791,7 +966,7 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
     <!-- End Footer Area -->
     <!-- End Footer Area -->
 
@@ -818,7 +993,6 @@
 
     <!-- main js file -->
     <script src="assets/js/main.js" defer></script>
-    <!-- End Footer Area -->
     <script src="components/Header.js"></script>
     <script src="components/Footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
@@ -828,10 +1002,8 @@
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/locale/vi.js"
       type=""
     />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
     <script src="my-js/general.js"></script>
     <script src="my-js/menu.js"></script>
-    <script src="my-js/Admin Article Create.js"></script>
+    <!-- End Footer Area -->
   </body>
 </html>
